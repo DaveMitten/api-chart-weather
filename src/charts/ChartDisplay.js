@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 
-import './index.css';
 
 const apiKey = '795729c8653e345f482c1cc215d655ab';
 const headers = new Headers();
@@ -36,6 +35,11 @@ class DataCharts extends Component {
 	componentDidMount() {
 		this.fetchData('42.3601', '-71.0589')
 	}
+
+	high = () => Math.max.apply(null, this.state.highestTemp);
+
+	low = () => Math.min.apply(null, this.state.lowestTemp);
+
 
 	render() {
 		const lineData = {
@@ -82,18 +86,38 @@ class DataCharts extends Component {
 		}
 
 		return (
-			<div style={{
-				margin: 'auto',
-				height: '500px',
-				width: '500px',
-				display: 'flex',
-				flexDirection: 'row', alignItems: 'center', justifyContent: 'center'
-			}}>
-				<Line
-					data={lineData}/>
-				<Bar
-					data={BarData} />
-			</div>
+			<>
+				<div style={{
+					display: 'flex',
+					flexDirection: 'row',
+					alignItems: 'center',
+					justifyContent: 'center',
+					margin: 'auto',
+					height: '500px',
+					width: '500px',
+				}}>
+					<Line
+						data={lineData} />
+					<Bar
+						data={BarData} />
+
+				</div>
+				<div style={{
+					margin: 'auto',
+
+					display: 'flex',
+					flexDirection: 'row',
+					alignItems: 'center',
+					justifyContent: 'center',
+				}} >
+					{this.state.highestTemp &&
+						<div>Highest temp: {this.state.highestTemp ? this.high() : ''}</div>
+					}
+					{this.state.lowestTemp &&
+						<div>Lowest temp: {this.state.lowestTemp ? this.low() : ''}</div>
+					}
+				</div>
+			</>
 		)
 	}
 }
