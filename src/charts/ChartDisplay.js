@@ -104,17 +104,16 @@ class DataCharts extends Component {
 				</div>
 				<div style={{
 					margin: 'auto',
-
 					display: 'flex',
 					flexDirection: 'row',
 					alignItems: 'center',
 					justifyContent: 'center',
 				}} >
 					{this.state.highestTemp &&
-						<div>Highest temp: {this.state.highestTemp ? this.high() : ''}</div>
+						<div style={{marginRight: '5px'}}>Highest temp: {this.state.highestTemp ? this.high() : ''}</div>
 					}
 					{this.state.lowestTemp &&
-						<div>Lowest temp: {this.state.lowestTemp ? this.low() : ''}</div>
+						<div style={{marginLeft: '5px'}}>Lowest temp: {this.state.lowestTemp ? this.low() : ''}</div>
 					}
 				</div>
 			</>
