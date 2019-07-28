@@ -1,3 +1,16 @@
+## Purpose
+Pull in data from the dark sky api and render that data in graphs supplied by chart js and a react wrapper from http://jerairrest.github.io/react-chartjs-2/
+
+## Functionality
+
+- Compare data in 2 different graphs. 
+- Animations show data being pulled in. 
+- Add or remove a set of data.
+
+Below demonstrates how to get a build or start the react app using CRA.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
