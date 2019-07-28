@@ -13,7 +13,7 @@ const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
 
 class DataCharts extends Component {
 	state = {
-		highestTemp: [], 
+		highestTemp: [],
 		lowestTemp: [],
 	}
 
